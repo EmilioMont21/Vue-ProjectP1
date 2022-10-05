@@ -1,6 +1,6 @@
 <script setup>
 import Users from './Users.vue';
-
+import Create from './Create.vue';
 defineProps({
   msg: {
     type: String,
@@ -16,7 +16,7 @@ defineProps({
       Emilio Montoya - Progreso 1
     </h3>
     <Users/>
-
+    <Create/>
   </div>
 </template>
 
