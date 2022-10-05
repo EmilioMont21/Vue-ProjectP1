@@ -37,7 +37,6 @@
 
                     <div class="btn-group" role="group" aria-label="">
                         <button type="submit" class="btn btn-success">Agregar</button>
-                        <button type="button" class="btn btn-warning">Cancelar</button>
                     </div>
 
                 </form>
@@ -68,10 +67,7 @@
                     body:JSON.stringify(datosEnviar)
                 })
                 .then(request => request.json())
-                .then((datosRespuesta=>{
-                    console.log(datosRespuesta);
-
-                }))
+                .then(location.reload())
             }
         }
     }
