@@ -1,23 +1,26 @@
 <script setup>
   import HelloWorld from './components/HelloWorld.vue'
+
+import Users from './components/Users.vue';
+import Create from './components/Create.vue';
   </script>
   
   <template>
     <header>
-      <div class="wrapper">
+      <div >
         <HelloWorld msg="CRUD" />
+      <Create/>
       </div>
+      
     </header>
   
     <main>
-      <TheWelcome />
+      <Users/>
     </main>
   </template>
   
   <style scoped>
-  header {
-    line-height: 1.5;
-  }
+
 
   @media (min-width: 1024px) {
     header {

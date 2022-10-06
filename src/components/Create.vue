@@ -9,28 +9,28 @@
 
                     <div class="form-group">
                         <label for="nombre">Nombre:</label>
-                        <input type="text"
+                        <input type="text" autocomplete="off"
                             class="form-control" name="nombre" v-model="user.nombre" id="nombre" aria-describedby="helpid" placeholder="Nombre">
                         <small id="helpid" class="form-text text-muted">Escribe el Nombre</small>
                     </div>
 
                     <div class="form-group">
                         <label for="correo">Correo:</label>
-                        <input type="email"
+                        <input type="email" autocomplete="off"
                             class="form-control" name="correo" v-model="user.correo" id="correo" aria-describedby="helpid" placeholder="Correo">
                         <small id="helpid" class="form-text text-muted">Escribe el Correo</small>
                     </div>
 
                     <div class="form-group">
                         <label for="edad">Edad:</label>
-                        <input type="number"
+                        <input type="number" autocomplete="off"
                             class="form-control" name="edad" v-model="user.edad" id="edad" aria-describedby="helpid" placeholder="Edad">
                         <small id="helpid" class="form-text text-muted">Escribe la edad</small>
                     </div>
 
                     <div class="form-group">
                         <label for="contrasenia">Contraseña:</label>
-                        <input type="text"
+                        <input type="text" autocomplete="off"
                             class="form-control" name="contrasenia" v-model="user.contrasenia" id="contrasenia" aria-describedby="helpid" placeholder="Contraseña">
                         <small id="helpid" class="form-text text-muted">Escribe la contraseña</small>
                     </div>
@@ -42,6 +42,7 @@
                 </form>
             </div>
         </div>
+
     </div>
 </template>
 <script>
