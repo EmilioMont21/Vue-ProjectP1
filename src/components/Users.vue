@@ -12,8 +12,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
-                            <th>Correo</th>
-                            <th>Edad</th>
+                            <th>Mail</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -21,8 +20,7 @@
                         <tr v-for="user in users" :key="user.UserId">
                             <td>{{user.UserId}}</td>
                             <td>{{user.Nombre}}</td>
-                            <td>{{user.Correo}}</td>
-                            <td>{{user.Edad}}</td>
+                            <td>{{user.Mail}}</td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="">
                                     <button type="button" v-on:click="editarUsuario(user)" class="btn btn-info">Editar</button>
@@ -47,18 +45,13 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="email"
-                            class="form-control" name="correo" v-model="Correo" id="correo" aria-describedby="helpid" placeholder="Correo">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="number"
-                            class="form-control" name="edad" v-model="Edad" id="edad" aria-describedby="helpid" placeholder="Edad">
+                        <input type="text"
+                            class="form-control" name="correo" v-model="Mail" id="mail" aria-describedby="helpid" placeholder="Correo">
                     </div>
 
                     <div class="form-group">
                         <input type="text"
-                            class="form-control" name="contrasenia" v-model="Contrasenia" id="contrasenia" aria-describedby="helpid" placeholder="Contraseña">
+                            class="form-control" name="contrasenia" v-model="Password" id="password" aria-describedby="helpid" placeholder="Contraseña">
                     </div>
 
                     <div class="btn-group" role="group" aria-label="">
@@ -75,6 +68,7 @@
 
 <script>
 export default {
+    name: 'UserComponent',
     data() {
         return {
             users: [],
@@ -92,9 +86,8 @@ export default {
             .then(request => request.json())
             .then((datos)=>{
                 this.users = []
-                if(typeof datos[0].success==='undefined'){
-                    this.users=datos;
-                }
+                this.users=datos;
+
             })
         },
         borrarUsuario(id){
@@ -106,9 +99,8 @@ export default {
         editarUsuario(userData){
             this.id = userData.UserId
             this.Nombre = userData.Nombre
-            this.Correo = userData.Correo
-            this.Edad = userData.Edad
-            this.Contrasenia = userData.Contrasenia
+            this.Mail = userData.Mail
+            this.Password = userData.Password
 
             this.seen = true
         },
@@ -125,10 +117,9 @@ export default {
                         body: JSON.stringify({
                             UserId:this.id,
                             Nombre:this.Nombre,
-                            Edad:this.Edad,
-                            Correo:this.Correo,
-                            Contrasenia:this.Contrasenia,
-                            Foto: "foto.png"
+                            Mail:this.Mail,
+                            Password:this.Password,
+                            Token: ""
                         })
                 })
                 .then(request => request.json())

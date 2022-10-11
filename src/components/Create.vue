@@ -5,7 +5,7 @@
                 Agregar Usuario
             </div>
             <div class="card-body">
-                <form v-on:submit.prevent="agregarRegistro">
+                <form >
 
                     <div class="form-group">
                         <label for="nombre">Nombre:</label>
@@ -16,27 +16,20 @@
 
                     <div class="form-group">
                         <label for="correo">Correo:</label>
-                        <input type="email" autocomplete="off"
-                            class="form-control" name="correo" v-model="user.correo" id="correo" aria-describedby="helpid" placeholder="Correo">
+                        <input type="text" autocomplete="off"
+                            class="form-control" name="correo" v-model="user.mail" id="correo" aria-describedby="helpid" placeholder="Correo">
                         <small id="helpid" class="form-text text-muted">Escribe el Correo</small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="edad">Edad:</label>
-                        <input type="number" autocomplete="off"
-                            class="form-control" name="edad" v-model="user.edad" id="edad" aria-describedby="helpid" placeholder="Edad">
-                        <small id="helpid" class="form-text text-muted">Escribe la edad</small>
                     </div>
 
                     <div class="form-group">
                         <label for="contrasenia">Contraseña:</label>
                         <input type="text" autocomplete="off"
-                            class="form-control" name="contrasenia" v-model="user.contrasenia" id="contrasenia" aria-describedby="helpid" placeholder="Contraseña">
+                            class="form-control" name="contrasenia" v-model="user.password" id="contrasenia" aria-describedby="helpid" placeholder="Contraseña">
                         <small id="helpid" class="form-text text-muted">Escribe la contraseña</small>
                     </div>
 
                     <div class="btn-group" role="group" aria-label="">
-                        <button type="submit" class="btn btn-success">Agregar</button>
+                        <button  v-on:click="agregarRegistro()" class="btn btn-success">Agregar</button>
                     </div>
 
                 </form>
@@ -47,6 +40,7 @@
 </template>
 <script>
     export default{
+        name: 'CreateComponent',
         data(){
             return{
                 user:{}
@@ -56,10 +50,9 @@
             agregarRegistro(){
                 var datosEnviar={
                     Nombre:this.user.nombre,
-                    Edad:this.user.edad,
-                    Correo:this.user.correo,
-                    Contrasenia:this.user.contrasenia,
-                    Foto: "foto.png"
+                    Mail:this.user.mail,
+                    Password:this.user.password,
+                    Token: ""
                 }
 
                 fetch('http://localhost:5111/api/user',{
@@ -68,7 +61,7 @@
                     body:JSON.stringify(datosEnviar)
                 })
                 .then(request => request.json())
-                .then(location.reload())
+                //.then(location.reload())
             }
         }
     }

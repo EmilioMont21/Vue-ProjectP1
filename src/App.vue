@@ -1,40 +1,28 @@
-<script setup>
-  import HelloWorld from './components/HelloWorld.vue'
+<template>
+  <div id="app">
+    <router-view/>
+  </div>
+</template>
 
-import Users from './components/Users.vue';
-import Create from './components/Create.vue';
-  </script>
-  
-  <template>
-    <header>
-      <div >
-        <HelloWorld msg="CRUD" />
-      <Create/>
-      </div>
-      
-    </header>
-  
-    <main>
-      <Users/>
-    </main>
-  </template>
-  
-  <style scoped>
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
+nav {
+  padding: 30px;
+}
 
-  @media (min-width: 1024px) {
-    header {
-      display: flex;
-      place-items: center;
-      padding-right: calc(var(--section-gap) / 2);
-    }
-    .logo {
-      margin: 0 2rem 0 0;
-    }
-    header .wrapper {
-      display: flex;
-      place-items: flex-start;
-      flex-wrap: wrap;
-    }
-  }
-  </style>
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
