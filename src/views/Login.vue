@@ -55,6 +55,7 @@ export default {
       .then((data) => {
           if(data.result == 1){
             this.$store.commit("setAuthentication", true)
+            this.$router.replace({ name: "home"})
           }else{
             this.error = true;
             this.error_msg = data.message

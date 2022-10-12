@@ -5,6 +5,8 @@
         <div class="card">
             <div class="card-header">
                 Usuarios
+                <button type="button" v-on:click="consultarUser()" 
+                class="btn btn-primary" style="margin-left: 75%;;">Actualizar</button>
             </div>
             <div class="card-body">
                 <table class="table">
@@ -94,7 +96,7 @@ export default {
             fetch('http://localhost:5111/api/user/'+id,{
                 method:'DELETE'
             })
-            .then(location.reload())
+            .then(this.consultarUser())
         },
         editarUsuario(userData){
             this.id = userData.UserId
@@ -123,7 +125,8 @@ export default {
                         })
                 })
                 .then(request => request.json())
-                .then(location.reload())
+                this.consultarUser()
+                this.seen = false
         }
     }
 }

@@ -61,7 +61,6 @@
                     body:JSON.stringify(datosEnviar)
                 })
                 .then(request => request.json())
-                //.then(location.reload())
             }
         }
     }
