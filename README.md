@@ -1,29 +1,23 @@
 # vue-project
 
-This template should help get you started developing with Vue 3 in Vite.
+Este proyecto contiene una aplicacion WEB que consuma una API propia para la opcion de datos ya que adentro existe un CRUD y Login los cuales hacen uso de esta API
 
-## Recommended IDE Setup
+Tecnologias: HTML, CSS, Javascript y Vue.js
+Componentes actuales: Login y Home
+
+## Configuraciones para el IDE recomendadas
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Project Setup - instala las dependencias necesarias 
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compilacion del proyecto
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
