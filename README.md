@@ -1,6 +1,6 @@
 # vue-project
 
-Este proyecto contiene una aplicacion WEB que consuma una API propia para la opcion de datos ya que adentro existe un CRUD y Login los cuales hacen uso de esta API
+Este proyecto contiene una aplicacion WEB que consume una API propia para la recoleccino de datos ya que adentro existe un CRUD y Login los cuales hacen uso de esta API
 
 Tecnologias: HTML, CSS, Javascript y Vue.js
 Componentes actuales: Login y Home
